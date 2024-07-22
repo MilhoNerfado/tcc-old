@@ -2,6 +2,8 @@
 
 cmake_minimum_required(VERSION 3.20.0)
 
+set(BOARD nucleo_g031k8)
+
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(tcc)
 
