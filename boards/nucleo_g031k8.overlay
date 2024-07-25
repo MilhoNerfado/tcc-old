@@ -5,8 +5,25 @@
  */
 
 / {
-	relays: gpio_pin_config {
-		compatible = "magic";
-		gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
+	relay: relay_config {
+		enable {
+			compatible = "relay";
+			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
+		};
+
+		clock {
+			compatible = "relay";
+			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
+		};
+
+		data {
+			compatible = "relay";
+			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
+		};
+
+		reset {
+			compatible = "relay";
+			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
+		};
 	};
 };

@@ -3,11 +3,11 @@
 
 description: GPIO pin to switch a power output on or off
 
-compatible: "magic"
+compatible: "relay"
 
 properties:
   gpios:
     type: phandle-array
     required: true
     description: |
-      The GPIO connected to the gate driver for the MOSFET.
+      A GPIO.
