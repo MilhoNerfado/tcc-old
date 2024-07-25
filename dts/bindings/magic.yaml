@@ -3,7 +3,7 @@
 
 description: GPIO pin to switch a power output on or off
 
-compatible: "power-switch"
+compatible: "magic"
 
 properties:
   gpios:
