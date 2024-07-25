@@ -6,8 +6,25 @@ description: GPIO pin to switch a power output on or off
 compatible: "relay"
 
 properties:
-  gpios:
+  enable-gpios:
     type: phandle-array
     required: true
     description: |
-      A GPIO.
+      Relay Enable.
+  clock-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      Relay Clock.
+  data-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      Relay Data.
+  reset-gpios:
+    type: phandle-array
+    required: false
+    description: |
+      Relay Reset.
+  
+  

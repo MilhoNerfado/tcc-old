@@ -6,24 +6,13 @@
 
 / {
 	relay: relay_config {
-		enable {
-			compatible = "relay";
-			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
-		};
+		compatible = "relay";
 
-		clock {
-			compatible = "relay";
-			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
-		};
+		enable-gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
+		clock-gpios = <&gpioa 6 GPIO_ACTIVE_HIGH>;
+		data-gpios = <&gpioa 7 GPIO_ACTIVE_HIGH>;
+		//		reset-gpios = <&gpioa 8 GPIO_ACTIVE_HIGH>;
 
-		data {
-			compatible = "relay";
-			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
-		};
 
-		reset {
-			compatible = "relay";
-			gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
-		};
 	};
 };
