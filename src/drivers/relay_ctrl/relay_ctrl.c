@@ -6,16 +6,18 @@
 
 #include <zephyr/drivers/gpio.h>
 
-static const struct gpio_dt_spec relay_enable_pin =
+static const struct gpio_dt_spec enable_pin_spec =
 	GPIO_DT_SPEC_GET(DT_NODELABEL(relay), enable_gpios);
 
-static const struct gpio_dt_spec relay_clock_pin =
+static const struct gpio_dt_spec clock_pin_spec =
 	GPIO_DT_SPEC_GET(DT_NODELABEL(relay), clock_gpios);
 
-static const struct gpio_dt_spec relay_data_pin =
-	GPIO_DT_SPEC_GET(DT_NODELABEL(relay), data_gpios);
+static const struct gpio_dt_spec data_pin_spec = GPIO_DT_SPEC_GET(DT_NODELABEL(relay), data_gpios);
 
-// static const struct gpio_dt_spec relay_reset_pin =
+// static const struct gpio_dt_spec reset_pin_spec =
 // 	GPIO_DT_SPEC_GET(DT_NODELABEL(relay), reset_gpios);
 
-int relay_ctrl_init();
+int relay_ctrl_init()
+{
+	return 0;
+}

@@ -5,11 +5,6 @@
 #ifndef RELAY_CTRL_H
 #define RELAY_CTRL_H
 
-
-
 int relay_ctrl_init();
 
-
-
-
-#endif //RELAY_CTRL_H
+#endif // RELAY_CTRL_H
