@@ -7,8 +7,6 @@
 #include <stdio.h>
 
 #include <zephyr/devicetree.h>
-#include <zephyr/drivers/gpio.h>
-#include <zephyr/kernel.h>
 
 #include "drivers/relay_ctrl/relay_ctrl.h"
 
