@@ -1,0 +1,3 @@
+config RELAY_LEN
+    int "Bit size of the relay buffer"
+    default 1
