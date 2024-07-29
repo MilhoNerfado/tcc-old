@@ -7,12 +7,25 @@
 #include <stdio.h>
 
 #include <zephyr/devicetree.h>
+#include <zephyr/sys/printk.h>
 
-#include "drivers/relay_ctrl/relay_ctrl.h"
+#include "drivers/mutex/mutex.h"
 
 int main(void)
 {
 	int err;
 
+	err = mutex_init();
+
+	if (err != 0) {
+		printk("Failed to init the mutex driver");
+		return -1;
+	}
+
 	return 0;
+}
+
+static int cmd_mutex_clear(void)
+{
+	return mutex_set(0);
 }

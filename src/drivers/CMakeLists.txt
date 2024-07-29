@@ -1,1 +1,1 @@
-add_subdirectory(relay_ctrl)
+add_subdirectory(mutex)

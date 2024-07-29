@@ -2,7 +2,7 @@
 // Created by milho on 7/23/24.
 //
 
-#include "relay_ctrl.h"
+#include "mutex.h"
 
 static const struct gpio_dt_spec enable_pin_spec =
 	GPIO_DT_SPEC_GET(DT_NODELABEL(relay), enable_gpios);
@@ -15,7 +15,7 @@ static const struct gpio_dt_spec data_pin_spec = GPIO_DT_SPEC_GET(DT_NODELABEL(r
 // static const struct gpio_dt_spec reset_pin_spec =
 // 	GPIO_DT_SPEC_GET(DT_NODELABEL(relay), reset_gpios);
 
-static int relay_data_push(bool data);
+static int mutex_data_push(bool data);
 
 static struct self {
 	bool is_init;
@@ -23,7 +23,7 @@ static struct self {
 	.is_init = false,
 };
 
-int relay_ctrl_init(void)
+int mutex_init(void)
 {
 	int err;
 
@@ -59,7 +59,7 @@ int relay_ctrl_init(void)
 	return 0;
 }
 
-int relay_ctrl_set(uint32_t toggle)
+int mutex_set(uint32_t toggle)
 {
 	if (!self.is_init) {
 		return -ENOEXEC;
@@ -78,7 +78,7 @@ int relay_ctrl_set(uint32_t toggle)
 	return 0;
 }
 
-static int relay_data_push(const bool data)
+static int mutex_push(const bool data)
 {
 	if (!self.is_init) {
 		return -ENOEXEC;
